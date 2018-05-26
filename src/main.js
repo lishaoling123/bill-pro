@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'    //因为用到了vue对象
 import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import '../theme/index.css';
 import App from './App'
 import router from './router'    //引入router路由，文件夹router里面的index.js可用
 import Es6Promise from 'es6-promise'

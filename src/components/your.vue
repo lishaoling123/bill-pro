@@ -3,6 +3,7 @@
   	<ul>
   		<li v-for="item in classList" :key="item.id">{{item.name}}</li>
   	</ul>
+  	<el-button type="primary" icon="el-icon-search">搜索</el-button>
   </div>
   <!--<ul>
   	<li v-for="item in classList" :key="index">{{item.name}}</li>
