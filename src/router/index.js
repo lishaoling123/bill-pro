@@ -15,123 +15,22 @@ Vue.use(VueRouter)
  */
 
 //1、引入需要的路由
-import Home from "./../components/home.vue"    //src命名为@，路径等价于@/components/home/index.vue，但是无法用alt跳转
-import Cart from "./../components/cart.vue"
-import Kind from "./../components/kind.vue"
-import User from "./../components/user.vue"
-import Your from "./../components/your.vue"
-import HomeHeader from "./../components/homeHeader.vue"  //地址别写错homeHeader
-import CartHeader from "./../components/cartHeader.vue"
-import KindHeader from "./../components/kindHeader.vue"
-import UserHeader from "./../components/userHeader.vue"
-import YourHeader from "./../components/yourHeader.vue"
+import Header from "./../components/header.vue"
+import ContentNav from "./../components/contentNav.vue"
 import Footer from "./../components/footer.vue"
-import DetailFooter from "./../components/detailFooter.vue"
-import PersonalLogin from "./../components/personalLogin.vue"     
-import PersonalNoLogin from "./../components/personalNoLogin.vue"
-//import PersonalLoginHeader from "./../components/personalLoginHeader.vue"
+import Index from "./../components/index.vue"
 //2、创建路由规则
 const routes = [
-  {path:"/",redirect:"/home"},   //重定向（默认首页）
-  //{path:"/kind",redirect:"/kind/1"},   //重定向（默认首页）
-  {path:"/kind",redirect:"/kind/1/美食1"},   //重定向（默认首页）
+  {path:"/",redirect:"/index"},   //重定向（默认首页）
+  //{path:"/kind",redirect:"/kind/1/美食1"},   //重定向（默认首页）
   {
-  	path:"/home",           
-  	name:"home",
+  	path:"/index",           
+  	name:"index",
   	//component:Home
   	components:{          //多视图路由
-  		header:HomeHeader,    //头部
-  		content:Home,    //内容区
-  		footer:Footer    //底部
-  	}
-  },
-  {
-  	path:"/kind", 
-  	name:"kind",
-  	//component:Kind
-  	components:{          //多视图路由
-  		header:KindHeader,    //头部
-  		content:Kind,    //内容区
-  		footer:Footer    //底部
-  	}
-  },
-  {
-  	//path:"/kind/:classId",  //动态路由匹配   把某种模式匹配到的所有路由，全都映射到同个组件   classId是路径参数
-  	path:"/kind/:classId/:title",  //动态路由匹配   把某种模式匹配到的所有路由，全都映射到同个组件   classId是路径参数
-  	name:"kindlist",      //不同 
-  	//component:Kind   //组件没有改变            //共同的组件
-  	components:{          //多视图路由
-  		//header:KindHeader,    //头部
-  		content:Kind,    //内容区
-  		footer:Footer    //底部
-  	},
-  	//props:true    //向路由组件传参，解耦，代码遵循“高内聚低耦合”
-  	//因为上面用的多视图路由，所以需要将props写成对象
-  	// 对于包含命名视图的路由，必须分别为每个命名视图添加 `props` 选项：
-  	props:{
-  		//headerheader:true,   
-  		content:true,    
-  		footer:false 
-  	}
-  },
-//{path:"/kind/:classId/name/:title", name:"kindlist",component:Kind},
-  {
-  	path:"/cart", 
-  	name:"cart",
-  	//component:Cart
-  	components:{          //多视图路由
-  		header:CartHeader,    //头部
-  		content:Cart,    //内容区
-  		footer:Footer    //底部
-  	}
-  },
-  {
-  	path:"/user", 
-  	name:"user",
-  	//component:User
-  	components:{          //多视图路由
-  		header:UserHeader,    //头部
-  		content:User,    //内容区
-  		footer:Footer    //底部
-  	},
-  	children:[
-  		{//登录状态
-  			path:"personalLogin",    //地址不加斜杠
-		  	name:"personalLogin",
-		  	component:PersonalLogin
-		  	/*components:{          //多视图路由
-		  		header:PersonalLoginHeader,    //头部
-		  		content:PersonalLogin    //内容区
-		  	}*/
-  		},
-  		{//未登录状态
-  			path:"personalNoLogin",    //地址不加斜杠
-		  	name:"personalNoLogin",
-		  	component:PersonalNoLogin
-		  	/*components:{          //多视图路由
-		  		header:PersonalLoginHeader,    //头部
-		  		content:PersonalNoLogin    //内容区
-		  	}*/
-  		}
-  	]
-  },
-   {
-  	path:"/detail/:goodsID", 
-  	name:"detail",
-  	//component:User
-  	components:{          //多视图路由
-  		header:CartHeader,    //头部
-  		content:Cart,    //内容区
-  		footer:DetailFooter    //底部
-  	}
-  },
-  {
-  	path:"/your", 
-  	name:"your",
-  	//component:Your
-  	components:{          //多视图路由
-  		header:YourHeader,    //头部
-  		content:Your,    //内容区
+  		header:Header,    //头部
+  		nav:ContentNav,
+  		content:Index,    //内容区
   		footer:Footer    //底部
   	}
   }
@@ -152,7 +51,3 @@ export default router;
     }
   ]
 })*/
-/*function text(){
-	alert("11111111");
-}
-text();*/

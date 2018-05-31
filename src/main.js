@@ -3,6 +3,7 @@
 import Vue from 'vue'    //因为用到了vue对象
 import ElementUI from 'element-ui';
 import '../theme/index.css';
+import '../static/plug/icon/iconfont.css';
 import App from './App'
 import router from './router'    //引入router路由，文件夹router里面的index.js可用
 import Es6Promise from 'es6-promise'

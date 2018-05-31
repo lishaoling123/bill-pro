@@ -4,7 +4,8 @@
     <router-view name="header"></router-view>    <!--多视图路由  name属性-->
     <!--<router-view name="content"></router-view>-->
     <!--<transition name="slide-fade">-->
-    	<router-view name="content"></router-view>
+    <router-view name="nav"></router-view>
+    <router-view name="content"></router-view>
     <!--</transition>-->
     <!--<v-footer></v-footer>-->
     <router-view name="footer"></router-view>
@@ -12,15 +13,6 @@
 </template>
 
 <script>
-	//使用哪个组件先在引入（import）
-	import Footer from "./components/footer.vue"
-	
-	export default {
-	  //name: 'App'
-	  components:{
-	  	//"v-footer":Footer   //注册组件
-	  }
-	}
 </script>
 
 <style lang="scss">
@@ -30,43 +22,12 @@ html,body,#app{
 	@include rect(100%,100%);
 }
 #app{
-	@include flexbox();
-	/*@include flex-direction(column);*/
-	flex-direction:column;
-	.header{
-    width: 100%;
-    height: 0.88rem;
-    background-color: #f66;
-    color: #fff;
-    text-align: center;
-    line-height: 0.8rem;
-	}
-	.container{
-		@include flex();
-		@include rect(100%,auto);
-		@include flexbox();
-		flex-direction:column;
-		/*.header{
-	    width: 100%;
-	    height: 0.88rem;
-	    background-color: #f66;
-	    color: #fff;
-	    text-align: center;
-	    line-height: 0.8rem;
-		}*/
-    .content{
-    	@include flex();
-	    width: 100%;
-	    height: auto;
-    }
-	}
-	footer{
-		@include rect(100%,1rem);
-		@include background-color(#eee);
-		@include text-color(#333);
-	}
+	
+  
 }
-
+.border-no{
+	border: none;
+}
 /* 可以设置不同的进入和离开动画 */
 /* 设置持续时间和动画函数 */
 /*.slide-fade-enter-active {

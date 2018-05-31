@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="static/plug/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="static/animate.min.css" />
+    <link rel="stylesheet" href="static/plug/icon/iconfont.css" />
     <title>myapp</title>
     <script>
-	    var bw = (document.documentElement.clientWidth / 7.5) + "px";
+	    //var bw = (document.documentElement.clientWidth / 7.5) + "px";   //手机
+	    var bw = (document.documentElement.clientWidth /19.20) + "px";     //PC
 	    var htmlTag = document.getElementsByTagName("html")[0];
 	    htmlTag.style.fontSize = bw;
 		</script>
@@ -14,6 +17,7 @@
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-    <script src="static/jquery-3.3.1.min.js"></script>
+    <script src="static/plug/jquery-3.3.1.min.js"></script>
+    <script src="static/plug/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   </body>
 </html>
